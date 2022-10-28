@@ -1,21 +1,31 @@
 {
-  "name": "devportfolio-template",
+  "name": "devfolio",
+  "private": true,
+  "description": "A modern and production-ready personal portfolio + blog template built with GatsbyJs and TailwindCSS",
   "version": "0.1.0",
-  "description": "",
-  "main": "js/scripts.js",
-  "scripts": {
-    "watch": "gulp watch"
+  "author": "Ryan Fitzgerald",
+  "dependencies": {
+  },
+  "devDependencies": {
+    
   },
   "keywords": [
-    "portfolio",
-    "personal",
-    "website",
-    "tech",
-    "coding",
-    "dev"
+    "gatsby"
   ],
-  "author": "Ryan Fitzgerald",
   "license": "MIT",
-  "devDependencies": {
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RyanFitzgerald/devfolio"
+  },
+  "bugs": {
+    "url": "https://github.com/RyanFitzgerald/devfolio/issues"
   }
 }
