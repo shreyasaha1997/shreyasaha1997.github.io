@@ -2,8 +2,8 @@
     Title: Dev Portfolio Template
     Version: 1.2.2
     Last Change: 03/25/2020
-    Author: Ryan Fitzgerald
-    Repo: https://github.com/RyanFitzgerald/devportfolio-template
+    Author: Shreya Saha
+    Repo: https://github.com/shreyasaha1997/devfolio_profile
     Issues: https://github.com/RyanFitzgerald/devportfolio-template/issues
 
     Description: This file contains all the scripts associated with the single-page
