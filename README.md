@@ -1,345 +1,223 @@
-# Dev Portfolio
+# Devfolio
 
-🚀 **[Dev Portfolio V2 has arrived. Meet Devfolio, a modern portfolio + blog template built with GatsbyJS and TailwindCSS](https://github.com/RyanFitzgerald/devfolio)** 🚀
+![Preview](https://user-images.githubusercontent.com/9112801/96329524-c8906600-101b-11eb-8fd8-4d45e7f0cd1b.jpg)
 
-This repo contains an easy-to-customize personal dev portfolio template that was created with Sass and JavaScript. It is lightweight and fully responsive, as well as comes with the Bootstrap grid system and loaded with Font Awesome. The site is static and comes production ready if you just want to add your information and go. Alternatively, you can edit styles, colours, and scripts fairly easily. The site was built as modular as possible to make it easy to shift around styles and content.
+Devfolio is a modern and production-ready personal portfolio and blog template built on GatsbyJS and styled with TailwindCSS. Easily show off your projects, experience, and skills, as well as write blog posts showcasing your knowledge.
 
-To view a live demo, [click here](https://ryanfitzgerald.github.io/devportfolio/).
+Some of the features include:
 
-Looking for a blog template? Checkout [DevBlog](https://github.com/RyanFitzgerald/devblog).
+- Built with React on GatsbyJS (however, no React knowledge required)
+- Styled with Tailwind
+- Simple Configuration
+- Production-ready & Deployable in Seconds
+- Write Blog Posts in Markdown (with Syntax Highlighting)
+- Mobile Friendly
+- Extend and Customize as Needed
+- Blazing Fast 🙄
 
-## Features
+**[Need help with the template or have suggestions? Reach out on Twitter anytime!](https://twitter.com/rfitzio)**
 
-* Gulp ready (compiles Sass and minifies JS)
-* Sass ready with lots of commenting
-* Fully responsive
-* Comes with Bootstrap grid system
-* Easy colour changes can be done through simple variable edits
+## Demo
+
+For a live demo of the base template, [click here](https://elastic-meninsky-aa7c74.netlify.app/).
+
+For a live demo of a slightly customized version of the template (my own personal site), [click here](https://rfitz.io).
 
 ## Contents
 
-- [Setup and Configuration](#setup-and-configuration)
-    - [Making Edits / Customizing the Template](#making-edits--customizing-the-template)
-    - [Using the Template As Is](#using-the-template-as-is)
-- [Customization and Editing](#customization-and-editing)
-    - [General](#general)
-    - [Images](#images)
-    - [Header Section](#header-section)
-    - [Lead Section](#lead-section)
-    - [About Section](#about-section)
-    - [Experience Section](#experience-section)
-    - [Education Section](#education-section)
-    - [Projects Section](#projects-section)
-    - [Skills Section](#skills-section)
-    - [Contact Section](#contact-section)
-    - [Footer Section](#footer-section)
-    - [Optional Sections](#optional-sections)
-- [Changelog](#changelog)
+- [Adding Your Information](#adding-your-information)
+  - [General](#general)
+  - [About Me](#about-me)
+  - [Projects](#projects)
+  - [Experience](#experience)
+  - [Skills](#skills)
+- [Setting Up The Blog](#setting-up-the-blog)
+- [Running Locally](#running-locally)
+- [Deploying](#deploying)
+- [Customization](#customization)
+- [Contributing](#contributing)
 - [License](#license)
 
-## Setup and Configuration
+## Adding Your Information
 
-The setup required can be broken into two types:
-1. If you want to make edits or customize the template
-2. If you just want to add your information as use as is
-
-### Making Edits / Customizing the Template
-
-To setup, simply fork the repo and run `npm install` in order to get all the Gulp dev dependencies. Next, run `Gulp watch` to compile the Sass and minify the JavaScript. Alternatively, if you don't have Gulp installed globally, you can run the npm script `npm run watch`. Any changes done to the JavaScript (js/scripts.js) or Sass (sass/styles.scss) will be autocompiled and ready to go.
-
-All scripts are within `js/scripts.js` and get minified to `js/scripts.min.js`. All styles are in `sass/styles.scss` and get compiled to `css/styles.css`. Both the minified scripts file and compiled CSS file are what is loaded on the page by default.
-
-At this point, the page is ready to go and you can begin to add your own information and make any needed changes. The sections below  contains a quick breakdown of each of the default sections and how they work.
-
-### Using The Template As Is
-
-If you wish to use the template as is (i.e. how it's seen in the demo), then all that's required is the `css`, `images`, `js`, `libs` folders and the `index.html` file. You would then add your content to `index.html` as needed and you're good to go!
-
-## Customization and Editing
+To get started, either fork or clone the repo. Next, open `gatsby-config.js` which has configuration options under `siteMetadata`. The config comes with some default example content and code comments to make it easy to understand how to set it up. The following provides a more in-depth explanation of each section:
 
 ### General
 
-In general, most styles on the page are based off the definitions of variables in the variable section of the style sheet:
+| Option        | Description                  | Required |
+| ------------- | ---------------------------- | -------- |
+| `siteUrl`     | The URL of your site         | Yes      |
+| `name`        | Your name                    | Yes      |
+| `title`       | The title of your site       | Yes      |
+| `description` | The description of your site | Yes      |
+| `author`      | Your Twitter Handle          | No       |
+| `github`      | Your GitHub Profile URL      | No       |
+| `linkedin`    | Your LinkedIn Profile URL    | No       |
 
-```SCSS
-// Define base and accent colors
-$base-color: #3498db;
-$base-color-hover: darken($base-color, 10%);
+### About Me
 
-// Define background colors
-$background: #fff;
-$background-alt: #f2f2f5;
+The _About Me_ section is defined under `about` and is a simple string type. This section is required.
 
-// Define border colors
-$border: #dcd9d9;
+### Projects
 
-// Define text colors
-$heading: #374054;
-$text: #74808a;
+The _Projects_ section is defined as an array under the `projects` key in the config and is optional. Projects have the following format:
+
+```js
+{
+  name: 'Devfolio', // Required
+  description: 'A zero-config and blazing fast personal site + blog built with GatsbyJs and TailwindCSS', // Required
+  link: 'https://github.com/RyanFitzgerald/devfolio', // Optional
+}
 ```
 
-If you wish to change the general colour scheme of the page for example, simply change the value of `$base-color`.
+### Experience
 
-There is also a number of default CSS classes that can be applied such as `.shadow`, `.shadow-large`, `.btn-rounded-white`, and various others. These can be found under the General Styles section in the style sheet.
+The _Experience_ section is defined as an array under the `experience` key in the config and is optional. Experience items have the following format:
 
-### Images
-
-By default, the template comes with a number of images, some of which can be kept and others which act simply as placeholders and should be switched. The template contains the following:
-
-* Main background (images/lead-bg.jpg) - this is the main background image provided via [Unsplash](https://unsplash.com/). This can be kept or changed easily by replacing `images/lead-bg.jpg` with your new background (recommended size of at least 1920x1080).
-* Favicon (/favicon.ico) - this is the favicon used for the page. Similar to the main bg, this can be kept or changed easily by replacing the `favicon.ico` with your new one.
-* Project image - these are the images associated with the projects under the project section. These are simply placeholders and should either be replaced or removed.
-
-### Header Section
-
-The header section can be found within the `<header>` tag and simply contains an unordered list of anchors to different sections of the page. If you add a new section and want to be able to quickly navigate to it from the top, simply add another list element with an anchor that has the href of the ID of the section. Conversely, if you remove a section, don't forget to remove the associated navigation element.
-
-If you wish to add a header link to an external page, simply add the class `no-scroll` to the anchor. For example:
-
-```HTML
-<li>
-    <a href="https://google.com" class="no-scroll">Google</a>
-</li>
+```js
+{
+  name: 'Hooli', // Required
+  description: 'Full-Stack Developer, May 2015 - December 2017', // Required
+  link: 'https://github.com/RyanFitzgerald/devfolio', // Optional
+},
 ```
 
-If you wish to have a sticky (fixed) header, you simply need to add a class of `sticky` to the main header. For example, that would be accomplished as follows:
+### Skills
 
-```HTML
-<header class="sticky">
-    <!-- Header content -->
-</header>
+The _Skills_ section is defined as an array under the `skills` key in the config and is optional. Skills have the following format:
+
+```js
+{
+  name: 'Languages & Frameworks',
+  description: 'JavaScript (ES6+), Golang, Node.js, Express.js, React, Ruby on Rails, PHP',
+},
 ```
 
-### Lead Section
+## Setting Up The Blog
 
-The Lead section is pretty straightforward, it contains an h1 for your name and an h2 for your title. It also contains a link that can be used to link to your resume should you wish to add it as well.
+The blog is an optional portion of the template and the content for it exists in the `content/blog` folder. All blog posts are written in Markdown by default and the template ships with a couple sample posts so you can get an idea of what's possible (i.e. syntax highlighting). If you'd rather not have a blog, simply delete the sample posts inside the folder while ensuring that the folder itself (`content/blog`) is kept as Gatsby still looks for it (you may also need to add `.gitkeep` to the folder so git recognizes it). If there are no posts in the folder, you will not see a Blog link at the top nor will you see the _Latest Posts_ section on the homepage. Once you add your first post, this will re-appear.
 
-If you want your resume to automatically download when the button is clicked instead of opening up in another tab (the default behaviour), add the following code (Thanks to jkfran for the suggestion) in the lead:
+### Adding a New Blog Post
 
-```HTML
-<a href="path/to/resume.pdf" download="resume.pdf" class="btn-rounded-white">Download Resume</a>
+To create a new blog post, create a new folder in `content/blog` with the name being the URL you want for the blog post. For example, if you create a folder `content/blog/hello-world`, the resulting path to your blog post will be `mysite.com/blog/hello-world`.
+
+Next, create an `index.md` file in the new folder with the following at the top of the file (including the lines):
+
+```
+---
+title: My Blog Title
+date: '2020-09-20T12:00:00.00Z'
+description: 'Some Short Blog Post Description'
+---
+
+My blog post starts here.
 ```
 
-The href attribute points to where your resume is stored and the download attribute is what triggers the download / provides the name the file will be downloaded as when the user clicks the button (In this case, it will download as resume.pdf).
+The portion between both lines (`---`) is the metadata for the blog post. The `title` attribute is the post's title, the `date` is the date that shows on the blog post, and the `description` is a brief excerpt of the post that shows on the home page and the blog page for the post summary. Below the metadata is where the content of your blog post would start.
 
-### About Section
+After that is done, you should now see you're latest blog post on your site (if you deploy or run it locally). One thing to keep in mind is that by default, the homepage will show only the latest 5 blog posts based on the `date` field entered. If you added a new blog post but it's not showing up, it's possible that you entered an older date by accident.
 
-The about section contains a quick about blurb that can be edited by changing the text within the paragraph tags.
+## Running Locally
 
-### Experience Section
+If you're happy with the current layout and design, you can simply edit your `gatsby-config.js` without the need to run it locally. With that said, if you want to spin it up locally, simply run `npm install` to install the required dependencies and then `npm run develop` to start the Gatsby development server. You can also run `npm run format` to run Prettier on the code.
 
-The experience section creates a vertical timeline with all your relevant experience. The code for the timeline creation can be found within `js/scripts.js` and is an adaptation of [RyanFitzgerald/vertical-timeline](https://github.com/RyanFitzgerald/vertical-timeline).
+## Deploying
 
-The default format is as follows:
+Devfolio is a fully static website by default, so the deployment options are fairly endless. Regardless of the deployment method, the same general idea applies. You first build the static production site by running `npm run build` and then deploy the resulting static assets wherever you want.
 
-```HTML
-<div id="experience-timeline">
-    <div data-date="September 2015 – September 2016">
-        <h3>Employer Name</h3>
-        <h4>Job Title</h4>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex.
-        </p>
+With that said, some deployment options are even easier so I will provide a couple examples below:
+
+### Netlify
+
+My deployment source of choice is [Netlify](https://www.netlify.com/) and is where my own [personal site](https://rfitz.io) is hosted. They have a Free Plan and automatically deploy changes to your `master` branch if you connect with GitHub or GitLab.
+
+For the easiest setup possible, simply click:
+
+<a href="https://app.netlify.com/start/deploy?repository=https://github.com/RyanFitzgerald/devfolio"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Netlify"/></a>
+
+If you'd rather run through the steps manually, start by creating a free Netlify account with your GitHub.
+
+Next, click **New Site From Git** and click **GitHub** (or another) as the provider.
+
+After that, select the repository where you cloned this into. If you don't see it, you may need to configure the Netlify App on Github via the link they provide.
+
+![Netlify Step 2](https://user-images.githubusercontent.com/9112801/96353255-4bef9d00-1098-11eb-88ba-1ae7a4cec8d3.png)
+
+Finally, ensure that it set the _Basic Build Settings_ correctly. You want to ensure that the **Build Command** is set to `gatsby build` and the **Publish Directory** is set to `public/`. Once complete, click **Deploy Site** and you should be good to go!
+
+### Vercel
+
+Another straightforward way to deploy devfolio is to use [Vercel](https://vercel.com/). The platform also offers a Hobby plan that will allow you to host the project free-of-charge.
+
+You can deploy devfolio with just a few clicks:
+
+<a href="https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2FRyanFitzgerald%2Fdevfolio&project-name=devfolio&repository-name=devfolio"><img src="https://vercel.com/button" alt="Vercel"/></a>
+
+As with Netlify, the deployment can be also done manually following identical settings.
+
+### GitHub Pages
+
+If you'd like, you can setup a build pipeline fairly easily that allows you to use GitHub Pages. To find more information, [read this guide](https://www.gatsbyjs.com/docs/how-gatsby-works-with-github-pages/).
+
+### Other
+
+If you want to learn more about the many other options to deploy, take a look at the [Deploying & Hosting](https://www.gatsbyjs.com/docs/deploying-and-hosting/) section of the GatsbyJS docs where they go through examples on how to deploy on Gatsby Cloud, Azure, AWS Amplify, AWS S3, and many more.
+
+## Customization
+
+Although Devfolio is fully production-ready out of the box, it was also made with customization in mind.
+
+### Gatsby Customization
+
+Devfolio is built on GatsbyJS, so it comes with all the benefits of it. You can make use of the thousands of Gatsby Plugins, utilize the Gatsby APIs (SSR, Browser, etc), and much more. For more information, check out [their great docs](https://www.gatsbyjs.com/docs/).
+
+### Adding or Updating Components
+
+GatsbyJS is based on React, so the template uses a bunch of React components behind the scenes. These components can be found in `src/components` in case you wish to create more or edit the current ones. With the exception of a couple GatsbyJS-specific components being imported, everything else is traditional React.
+
+One thing to note is that if you wish to query data in one of the components, you can do so with the `<StaticQuery/>` component that comes with GatsbyJs. For more information, [click here](https://www.gatsbyjs.com/docs/static-query/#reach-skip-nav).
+
+### Adding or Updating Pages
+
+The pages for the template exist in `src/pages` and are simply React components that get treated as pages by GatsbyJS. By default, the following pages exist in the template:
+
+- `src/pages/index.jsx` - the main homepage
+- `src/pages/blog.jsx` - the main `/blog` homepage
+- `src/pages/404.jsx` - the default 404 page
+
+You can easily modify those pages and create new ones. Gatsby core automatically takes any React component in `src/pages/*` and turns it into a separate page (they must export a component as a default export). For example, if you make a new component as `src/pages/page1.jsx`, it will automatically create a new page that can be visited via `mysite.com/page1`. For more information on pages as well as other ways they can be created, [click here](https://www.gatsbyjs.com/docs/creating-and-modifying-pages/).
+
+### Adding or Updating Styles
+
+Devfolio is fully styled with [TailwindCSS](https://tailwindcss.com/) with the exception of a couple minor additional styles, as found in `src/css/index.css`.
+
+When the GatsbyJS development server is running, you'll have access to all of the Tailwind styles, however once you deploy (i.e. build the static assets), PurgeCSS runs against them and only leaves the Tailwind styles that were actually used. This is beneficial because it keeps the build size considerably smaller, however there are some important considerations to keep in mind in order to keep the HTML purgeable. For example, if you use string concatenation to create a class name, PurgeCSS won't be able to figure out what that is. For more information on writing purgeable HTML + other methods to control file size, [click here](https://tailwindcss.com/docs/controlling-file-size).
+
+The pattern current used in the template when it comes to writing React components with Tailwind CSS is as follows:
+
+```jsx
+const classes = {
+  wrapper: 'm-12 p-12',
+  text: 'text-lg text-gray-600 font-light',
+};
+
+const MyComponent = () => {
+  return (
+    <div className={classes.wrapper}>
+      <p className={classes.text}>Some text here.</p>
     </div>
-</div>
+  );
+};
 ```
 
-The data attribute `data-date` is what is used to add a date to the associated timeline point. All that is really required is a wrapping div (i.e. `#experience-timeline`) and nested divs to build the timeline. The h3, h4, and p tags are optional and the contents of the div can be styled however you wish.
+All the possible classes are defined above and just referenced in the `className` attribute of each element. This comes with a couple benefits:
 
-To add an additional section, simply add additional nested divs under the main wrapping div.
+1. It keeps the overall component definition slightly cleaner (i.e. there isn't a huge class string)
+2. You can reuse styles a little easier
+3. This still qualifies as purgeable HTML (assuming the class is actually used)
 
-### Education Section
-
-The Education is just a series of `.education-block` classes with some details associated with them. By default, it shows school name, date, degree, and some additional details. For example:
-
-```HTML
-<div class="education-block">
-    <h3>University of Ottawa</h3>
-    <span class="education-date">Sept 2016 - Sept 2017</span>
-    <h4>Bachelor of Science in Computer Science</h4>
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex.
-    </p>
-</div>
-```
-
-To add additional section, simply add additional `.education-block` elements.
-
-### Projects Section
-
-The Project section contains a number of `.project` elements that represent each of your projects. By default, it contains a 300x300 image under `.project-image` and relevant project information under `.project-info`. An example is as follows:
-
-```HTML
-<div class="project">
-    <div class="project-image">
-        <img src="images/project.jpg" />
-    </div>
-    <!-- End .project-image -->
-
-    <div class="project-info">
-        <h3>Project Name Here</h3>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex.
-        </p>
-        <a href="#">View Project</a>
-    </div>
-    <!-- End .project-info -->
-</div>
-```
-
-If you want to hide some projects by default, you can throw them in an additional row and add the markup for the "Show More" button. This would be done as follows:
-
-```HTML
-<!-- Projects Above -->
-
-<a id="view-more-projects" href="#">View More Projects</a>
-<div id="more-projects" class="row">
-    <div class="project shadow-large">
-        <div class="project-image">
-            <img src="images/project.jpg" />
-        </div>
-        <!-- End .project-image -->
-        <div class="project-info">
-            <h3>Project Name Here</h3>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
-            </p>
-            <a href="#">View Project</a>
-        </div>
-        <!-- End .project-info -->
-    </div>
-    <!-- End .project -->
-</div>
-```
-
-This will add a link that says "View More Projects" under the current projects and when clicked, all projects in the "More-projects" div will be shown. This is optional functionality and isn't provided by default. It is important that you keep the wrapping div ID intact ("#more-projects") as well as the anchor ID ("#view-more-projects"), however the contents of the div and the anchor text itself can be edited however you like.
-
-#### Projects without images
-
-If you do not wish to have a project image associated with a project, you can simply add `no-image` as an additional class to the project. It would look like the following:
-
-```HTML
-<div class="project no-image">
-    <div class="project-info">
-        <h3>Project Name Here</h3>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex.
-        </p>
-        <a href="#">View Project</a>
-    </div>
-    <!-- End .project-info -->
-</div>
-```
-
-### Skills Section
-
-The Skills section is simply an unordered list that spits out a "Skill Cloud" with all the skills listed. To add / remove skills, simply edit or add list elements, like so:
-
-```HTML
-<ul>
-    <li>JavaScript</li>
-    <li>Python</li>
-    <li>Ruby</li>
-    <li>Go</li>
-    <li>Node.js</li>
-</ul>
-```
-
-### Contact Section
-
-Since the page is static, I opted to use the awesome Formspree to allow for a contact form without the need for anything else. To use it, you must have the page hosted on a server (loading a basic HTML page won't work) where a referrer header is generated. Also, simply add the email to the action. An example is as follows:
-
-```HTML
-<form method="POST" action="https://formspree.io/email@email.com">
-    <input type="hidden" name="_subject" value="Contact request from personal website" />
-    <input type="email" name="_replyto" placeholder="Your email" required>
-    <textarea name="message" placeholder="Your message" required></textarea>
-    <button type="submit">Send</button>
-</form>
-```
-For more information on configuration of the contact form or dealing with errors, check out [Formspree](https://formspree.io/).
-
-For a quick tutorial about formspree, check out this [tutsplus tutorial](https://webdesign.tutsplus.com/tutorials/quick-tip-add-a-formspree-form-to-your-static-sites--cms-23870) that covers different aspects and features of the form tool.
-
-### Footer Section
-
-The Footer contains an optional copyright where you can place your name as well as an unordered list of all of your social or coding related profiles. By default it contains Github, Stack Overflow, Facebook, Twitter, and Google Plus. You can add or remove them easily and simply use the Font Awesome icon associated with the social profile you wish to use. For a list of all icons, [click here](http://fontawesome.io/icons/).
-
-### Optional Sections
-
-The template comes with an optional section that can be added to the page markup to list things like Certifications, Hobbies, and more (Note: these are not included by default). The markup for the additional optional section is as follows:
-
-```HTML
-<div class="optional-section background-alt">
-    <h2 class="heading">Section Name</h2>
-
-    <div class="optional-section-block">
-        <h3>Some content title</h3>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
-        </p>
-        <ul>
-            <li>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </li>
-            <li>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </li>
-            <li>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </li>
-        </ul>
-    </div>
-    <!-- End .optional-section-block -->
-
-</div>
-<!-- End .optional-section -->
-```
-
-You can copy .optional-section-block for each new item you wish you have in the optional section. Also, the background-alt class may need to be removed depending on where the optional section is placed in your layout as this adds the grey background. If you play it at the bottom after "Skills", it can be used as is. Also, by default the border is applied at the top, but this can also be adjusted as needed.
-
-The optional section blocks have styling for h3 (the block title), h4, p, and ul tags by default.
-
-## Changelog
-
-### 1.2.2
-
-* Updated dependencies and gulpfile
-
-### 1.2.1
-
-* Updated dependencies and gulpfile
-* Added `no-image` optional class for projects without images (see above for usage)
-
-### 1.2.0
-
-* Added support for optional "Show More Projects" that hides some projects by default if included
-* Added optional sections to display certifications, languages, etc.
-
-### 1.1.3
-
-* Added default favicon to be used or changed
-* Added `sticky` class to make header fixed
-* Updated docs to add image section
-
-### 1.1.2
-
-* Added `no-scroll` class option to header navigation anchor if you want to link to external site
-* Changed contact form input / textarea colours to be based off `$base-color`
-* Changed main background to 100vh so it doesn't overflow if viewport height < 700px
-
-### 1.1.1
-
-* Made input placeholder text more readable
-* Removed timeline line when no JS
-* Added some basic styling to timeline when no JS
-
-### 1.1.0
-
-* Fixed menu toggle on mobile devices
-* Fixed z-index / scrolling issue with mobile menu
-* Mobile menu now closes once a nav element is hit
+This is however just a recommendation, the template allows you to write the components in any way you wish.
 
 ## License
 
-Completely free (MIT)! See [LICENSE.md](LICENSE.md) for more.
+Licensed under the [MIT License](https://github.com/RyanFitzgerald/devfolio/blob/master/LICENSE.md).
