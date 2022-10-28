@@ -8,31 +8,27 @@ module.exports = {
     title: `Shreya Saha | Full-Stack Developer`,
     // Description that goes under your name in main bio
     description: `CS Masters' Student @ UCSD`,
-    // Optional: Github account URL
-    email: `ssaha@ucsd.edu`,
-    // Optional: LinkedIn account URL
-    linkedin: `https://www.linkedin.com/in/shreya-saha-6b5571137/`,
     // Content of the About Me section
-    about: `ssss`,
+    about: `I am a Masters’ student in the Computer Science Department of UC San Diego, and my research interests lie in theoretical Machine Learning and its applications in the domains of healthcare, Natural Language Processing and Robotics.`,
     // Optional: List your projects, they must have `name` and `description`. `link` is optional.
     projects: [
       {
-        name: 'Devfolio',
+        name: 'Domain Adaptation Using Neural Architecture Search (2021 - Present)',
+        Advisor: 'Pengtao Xie',
         description:
-          'A zero-config and blazing fast personal site + blog built with GatsbyJs and TailwindCSS',
-        link: 'https://github.com/RyanFitzgerald/devfolio',
+          'Improving supervised domain algorithm by implementing a three step multilevel optimization framework that uses Neural Architceture Search methods such as DARTS, PDARTS and PC-DARTS and the skillearn algorithm.',
       },
       {
-        name: 'ChromeExtensionKit',
+        name: 'Visual Matrix Prediction (2022)',
+        Advisor: 'Pengtao Xie, Alireza Kamalipour',
         description:
-          'Kit to jump-start your Chrome extension projects with a variety of battle-tested starter templates',
-        link: 'https://chromeextensionkit.com/?ref=devfolio',
+          'Use Optic Nerve Head OCTA eye images to predict 10-2 and 24-2 visual field matrix using resnets and Unets',
       },
       {
-        name: 'Another Cool Project',
+        name: 'Gene Expression Analysis (2022-Present)',
+        Advisor: 'Debashish Sahoo',
         description:
-          'Lorem ipsum dolor sit amet consectetur adipisicing elit ducimus perferendis',
-        link: 'https://github.com/RyanFitzgerald/devfolio',
+          'Processed solid cancer genome datasets from Gene Expression Omnibus (GEO) website to hegemon website created by Boolean Lab. Analyzing and validating invariant biomarkers for White Blood Cells using BECC technique. Designing primers to duplicate genes from a given genome sequence.',
       },
     ],
     // Optional: List your experience, they must have `name` and `description`. `link` is optional.
