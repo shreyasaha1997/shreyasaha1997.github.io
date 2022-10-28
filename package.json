@@ -7,6 +7,7 @@
     "build": "open-cli index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "dependencies": {"open-cli": "^6.0.1"},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/shreyasaha1997/devfolio_profile.git"
