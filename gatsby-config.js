@@ -28,7 +28,23 @@ module.exports = {
         name: 'Gene Expression Analysis (2022-Present)',
         Advisor: 'Debashish Sahoo',
         description:
-          'Processed solid cancer genome datasets from Gene Expression Omnibus (GEO) website to hegemon website created by Boolean Lab. Analyzing and validating invariant biomarkers for White Blood Cells using BECC technique. Designing primers to duplicate genes from a given genome sequence.',
+          'Processed solid cancer genome datasets from Gene Expression Omnibus (GEO) website to hegemon website created by Boolean Lab, validated invariant biomarkers for White Blood Cells using BECC technique and designed primers to duplicate genes from a given genome sequence.',
+      },
+      {
+        name: 'Robot Motion Planner Using a Jetbot  (2021)',
+        description:
+          'Designed a roomba like system using Voronoi path planner and KALMAN filter based SLAM techniques that would navigate through the environment using artificial landmarks (April tags).',
+      },
+      {
+        name: 'Python Compiler Using Typescript and WASM (2022)',
+        description:
+          'Designed and build a python compiler that takes care of comprehension statements and collaborated with 50 other students to integrate the above functionalities with other python expressions (namely lists, conditional expressions, built-in libraries etc)',
+      },
+      {
+        name: 'PUF based Protocol for Secure WiFi Authentication of IoT devices (2017-2019)',
+        Advisor: 'Bibhash Sen',
+        description:
+          'Used Physically Unclonable Functions(PUFs) to secure IoT devices against WiFi attacks via xor encryption of the challenge-response pairs of the PUF, MAC address of the connecting device and a random number nonce',
       },
     ],
     // Optional: List your experience, they must have `name` and `description`. `link` is optional.
