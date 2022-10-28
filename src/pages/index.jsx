@@ -54,8 +54,8 @@ export const pageQuery = graphql`
         }
         experience {
           name
+          role
           description
-          link
         }
         skills {
           name
