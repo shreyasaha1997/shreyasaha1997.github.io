@@ -49,8 +49,8 @@ export const pageQuery = graphql`
         linkedin
         projects {
           name
+          Advisor
           description
-          link
         }
         experience {
           name
