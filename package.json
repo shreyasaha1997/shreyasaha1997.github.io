@@ -1,0 +1,19 @@
+{
+  "name": "devportfolio",
+  "version": "1.0.0",
+  "description": "self profile",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shreyasaha1997/devfolio_profile.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shreyasaha1997/devfolio_profile/issues"
+  },
+  "homepage": "https://github.com/shreyasaha1997/devfolio_profile#readme"
+}
