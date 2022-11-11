@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Portfolio</title>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div >
+        <div class="project-image">
+            <img src="images/da.png" width="300" height="300"/>
+        </div>
+        <!-- End .project-image -->
+        <div class="project-description">
+            <h3>Domain Adaptation Using Neural Architecture Search (2021 - Present)</h3>
+            <h4>Advisor - Pengtao Xie</h4>
+            <p>
+                <ul>
+                    Existing domain adaptation techniques on image datasets are mainly unsupervised in nature, where the source domain is transformed to the target domain or vice versa. dSNE is one of the few recent works on supervised domain adaptation where the loss function maximizes the distance between sample embeddings having different labels and minimizes the distance between sample embeddings having the same label. We investigated ways to approach domain adaptation techniques to separate domain and class specific representation and propose a novel multi-level optimization approach for domain adaptation via the skillearn framework.
+                </ul>
+                <ul>
+                    Skillearn is a general framework that represents the way human beings use learning skills in a mathematical manner. The framework usually consists of multiple models with multiple sets of learnable parameters that learn via a multilevel optimization approach. Each level influences the other. In our approach, we assume the total representation of the image to be a combination of the domain and the class representation, and once the domain representation is subtracted from the net representation, the resultant image embeddings will  be domain independent. We use differentiable neural architecture search methods to train a model architecture to best differentiate between source and target domains. The models are trained using a three level skillearn optimisation framework.
+                </ul>
+                <ul><a href="index.html">Go back to main page</a></ul>
+            </p>
+            
+        </div>
+        <!-- End .project-info -->
+    </div>
+    
+
+</body>
+
+

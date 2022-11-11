@@ -87,6 +87,7 @@ $text: #74808a;
 body {
     font-family: 'Lato', sans-serif;
     font-size: 16px;
+    height: 100%;
 
     &.active {
         overflow: hidden;
@@ -645,9 +646,13 @@ footer {
     position: relative;
     max-width: 900px;
     margin: 0 auto 30px auto;
-    overflow: hidden;
+    overflow: scroll;
     background: #fff;
     border-radius: 4px;
+}
+
+.project-description {
+    text-align-last: justify;
 }
 
 .project-image {
@@ -656,6 +661,8 @@ footer {
 
 .project-info {
     position: absolute;
+    // overflow-x: hidden;
+    overflow-y:scroll;
     top: 50%;
     transform: translateY(-50%);
     margin-left: 300px;
@@ -677,6 +684,7 @@ footer {
 
 .no-image {
     .project-info {
+        overflow-y:scroll;
         position: relative;
         margin: 0;
         padding: 30px 15px;
@@ -963,6 +971,7 @@ footer {
     }
 
     .project-info {
+        overflow-y:scroll;
         position: relative;
         margin: 0;
         padding: 30px 15px;
