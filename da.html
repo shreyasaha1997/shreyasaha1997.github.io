@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+
 </head>
 
 <body>
@@ -30,6 +32,22 @@
                 <ul>
                     Skillearn is a general framework that represents the way human beings use learning skills in a mathematical manner. The framework usually consists of multiple models with multiple sets of learnable parameters that learn via a multilevel optimization approach. Each level influences the other. In our approach, we assume the total representation of the image to be a combination of the domain and the class representation, and once the domain representation is subtracted from the net representation, the resultant image embeddings will  be domain independent. We use differentiable neural architecture search methods to train a model architecture to best differentiate between source and target domains. The models are trained using a three level skillearn optimisation framework.
                 </ul>
+                <ul>
+                    We assume that any image either belongs to the source or the target domain, and any one of K classes or categories. The main idea behind our approach is to have a model that can differentiate between source and target images. The total embedding of an image can be considered as a summation of the source and target embedding. If we are able to remove the source embedding from the total, we will only be left with the target embedding and the problem becomes a normal classification problem. We use two classifiers (models) - domain and class classifier. The class model can be any deep network classification model such as resnet or imagenet. We use NAS methods to find the best optimal architecture that can differentiate between source and target images. The method that we have primarily used for our experiments so far is DARTS.
+                </ul>
+                <ul>
+                    In the first level, the domain model weights are updated. xi and yi refer to the ith training example, where xi is the input image and yi is the domain label. The total number of training examples is N. The domain model consists of a domain encoder (architecture A and weights W) and a classification head that takes in the domain encoded representation and outputs 0 or 1 referring to either the source or target domain. The architecture is kept constant at this stage and will be updated at a later stage.
+                </ul>
+                $$ W^*(A) = min_W  \Sigma_{i=1}^N l_{dc} (x_i, y_i, A, W) $$
+                <ul>
+                    Next the class model weights are updated keeping the domain model weights constant. We use the domain encoder of the domain model trained in the previous step to obtain a domain representation. The class model also consists of two parts - an encoder and a classification head. The output of the class classifier is assumed to be the combination of both the domain and the class representation of an image. If we subtract or remove the domain representation from the overall representation, we get the class representation which is then fed to the classification head of the class model. V refers to the enoder weights. The architecture of the encoder is fixed and is not changed. G refers to the classification head. zi refers to the class or category labels of the training examples.
+                </ul>
+                $$ \text{Class representation (input to classification head G)} = e(x_i,V) - e(x_i,W^*(A)) $$
+                $$ V^*(W^*(A)), G^*(W^*(A)) = min_{V,G}  \Sigma_{i=1}^N l_{cc} (x_i, z_i, W^*(A), V, G) $$
+                <ul>
+                   In the last step, the domain model architecture is updated using samples from the validation set, and the rest of the parameters are kept as constant. In the below equation, xi and yi refer to samples from the validation set, and M is the total number of samples in the validation set.
+                </ul>
+                $$ min_A \Sigma_{i=1}^M l_{cc} (x_i, y_i, V^*(W^*(A)), G^*(W^*(A)), W^*(A)) $$
                 <ul><a href="index.html">Go back to main page</a></ul>
             </p>
             
